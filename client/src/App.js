@@ -1,20 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react'
+import axios from 'axios'
+import HomePage from './components/HomePage'
 
 class App extends Component {
+  state = {
+    users: []
+  }
+
+  // componentWillMount
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img height="200" src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Warhol.inv !!</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <HomePage
+        // componentWillMount={this.componentWillMount}
+        // users={this.state.users}
+        // createUser={this.createUser}
+        // deleteUser={this.deleteUser}
+        // handleUserChange={this.handleUserChange}
+        // updateUser={this.updateUser}
+        // createGallery={this.createGallery}
+        // handleGalleryChange={this.handleGalleryChange}
+        // updateGallery={this.updateGallery}
+      />
+    )
   }
 }
 
-export default App;
+export default App
