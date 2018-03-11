@@ -43,3 +43,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'foreman'
 
 gem 'httparty'
+
+gem 'active_model_serializers'

@@ -25,7 +25,7 @@ jeremy = User.create(
 )
 
 ## susan has 3 galleries 
-susan_gallery1 = Gallery.create!(
+susan_gallery1 = Gallery.create(
   user: susan,
   name: "Whitespace",
   img_url: "gallery image"
@@ -42,31 +42,31 @@ susan_gallery3 = Gallery.create(
 )
 
 ## whitespace has 5 artworks
-artwork1_gallery1 = Artwork.create(
+Artwork.create(
   gallery: susan_gallery1,
   name: "Girl With Pearl Earring",
   artist: "Vermeer",
   img_url: "/img/vermeer_girl-w-pearl1.jpg"
 )
-artwork2_gallery1 = Artwork.create(
+Artwork.create(
   gallery: susan_gallery1,
   name: "Elvis Presley Print",
   artist: "Andy Warhol",
   img_url: "/img/vermeer_girl-w-pearl1.jpg"
 )
-artwork3_gallery1 = Artwork.create(
+Artwork.create(
   gallery: susan_gallery1,
   name: "Poseiden Rocks",
   artist: "Donatello",
   img_url: "/img/vermeer_girl-w-pearl1.jpg"
 )
-artwork4_gallery1 = Artwork.create(
+Artwork.create(
   gallery: susan_gallery1,
   name: "School of Athens",
   artist: "Raphael",
   img_url: "/img/vermeer_girl-w-pearl1.jpg"
 )
-artwork5_gallery1 = Artwork.create(
+Artwork.create(
   gallery: susan_gallery1,
   name: "Starry Night",
   artist: "Van Gogh",
@@ -74,13 +74,13 @@ artwork5_gallery1 = Artwork.create(
 )
 
 # saltworks has 2 artworks
-artwork1_gallery2 = Artwork.create(
+Artwork.create(
   gallery: susan_gallery2,
   name: "Girl With Pearl Earring 2",
   artist: "Vermeer",
   img_url: "/img/vermeer_girl-w-pearl1.jpg"
 )
-artwork2_gallery2 = Artwork.create(
+Artwork.create(
   gallery: susan_gallery2,
   name: "Starry Night 2",
   artist: "Van Gogh",
@@ -88,13 +88,13 @@ artwork2_gallery2 = Artwork.create(
 )
 
 # pepperworks has 2 artworks
-artwork1_gallery2 = Artwork.create(
+Artwork.create(
   gallery: susan_gallery3,
   name: "Girl With Pearl Earring 3",
   artist: "Vermeer",
   img_url: "/img/vermeer_girl-w-pearl1.jpg"
 )
-artwork2_gallery2 = Artwork.create(
+Artwork.create(
   gallery: susan_gallery3,
   name: "Starry Night 3",
   artist: "Van Gogh",
@@ -102,7 +102,7 @@ artwork2_gallery2 = Artwork.create(
 )
 
 # nathan has 2 galleries 
-nathan_gallery1 = Gallery.create!(
+nathan_gallery1 = Gallery.create(
   user: nathan,
   name: "MINT Gallery",
   img_url: "gallery image"
@@ -114,13 +114,13 @@ nathan_gallery2 = Gallery.create(
 )
 
 # mint gallery has 2 artworks
-artwork1_gallery1 = Artwork.create(
+Artwork.create(
   gallery: nathan_gallery1,
   name: "Soup Cans Print",
   artist: "Andy Warhol",
   img_url: "/img/vermeer_girl-w-pearl1.jpg"
 )
-artwork2_gallery1 = Artwork.create(
+Artwork.create(
   gallery: nathan_gallery1,
   name: "Soup Cans Print 2",
   artist: "Andy Warhol",
@@ -128,13 +128,13 @@ artwork2_gallery1 = Artwork.create(
 )
 
 # mason mirror has 2 artworks
-artwork1_gallery2 = Artwork.create(
+Artwork.create(
   gallery: nathan_gallery2,
   name: "Soup Cans Print 3",
   artist: "Andy Warhol",
   img_url: "/img/vermeer_girl-w-pearl1.jpg"
 )
-artwork2_gallery2 = Artwork.create(
+Artwork.create(
   gallery: nathan_gallery2,
   name: "Soup Cans Print 4",
   artist: "Andy Warhol",
@@ -142,25 +142,25 @@ artwork2_gallery2 = Artwork.create(
 )
 
 # ayana has 1 gallery with 1 artwork
-ayana_gallery1 = Gallery.create!(
+ayana_gallery1 = Gallery.create(
   user: ayana,
   name: "High Fives Gallery",
   img_url: "gallery image"
 )
-artwork1_gallery1 = Artwork.create(
+Artwork.create(
   gallery: ayana_gallery1,
   name: "LOVE",
   artist: "Ayana Reddick",
-  img: "/img/ayanas-purplebg.png"
+  img_url: "/img/ayanas-purplebg.png"
 )
 
 # jeremy has 1 gallery with 1 artwork
-jeremy_gallery1 = Gallery.create!(
+jeremy_gallery1 = Gallery.create(
   user: jeremy,
   name: "The Brooklyn Museum",
   img_url: "gallery image"
 )
-artwork1_gallery1 = Artwork.create(
+Artwork.create(
   gallery: jeremy_gallery1,
   name: "Soup Cans Print 5",
   artist: "Andy Warhol",

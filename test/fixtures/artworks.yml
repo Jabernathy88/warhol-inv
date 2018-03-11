@@ -5,11 +5,9 @@ one:
   artist: MyString
   img_url: MyString
   gallery: one
-  user: one
 
 two:
   name: MyString
   artist: MyString
   img_url: MyString
   gallery: two
-  user: two
