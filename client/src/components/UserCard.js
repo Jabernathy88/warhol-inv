@@ -31,7 +31,8 @@ const UserCardWrapper = styled.div `
 const UserCard = (props) => {
   return (
     <UserCardWrapper>
-    hello from UserCard
+      <p> hello from UserCard </p>
+
       {/* <p>
         <strong>User: {props.user.name}</strong>
       </p>

@@ -37,12 +37,14 @@ const UsersListArticle = (props) => {
       <FlexWrapper>
       <strong>recent users</strong>
 
-      {/* <CreateUserButton 
-        onClick={props.createUser}>
+      <CreateUserButton 
+        // onClick={props.createUser}
+        >
         Add new user
       </CreateUserButton>
 
-      {props.users.map((user) => {
+      <UserCard />
+      {/* {props.users.map((user) => {
         return (
           <UserCard
             user={user}
