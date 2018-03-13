@@ -68,8 +68,15 @@ class App extends Component {
   }
 
 
-  createGallery = async(user_id) => {
-    await axios.post(`/api/galleries`, user_id)
+  createGallery = async(userId) => {
+    const user_id = parseInt(userId, 10) 
+    try { 
+      await axios.post(`/api/galleries`, user_id)
+    } catch (error) {
+      console.log(error)
+    }
+  
+
 
     // const userWithNewGallery = response.data
     // console.log("This updatedUser is: ", userWithNewGallery)

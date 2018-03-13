@@ -5,10 +5,11 @@ class Api::GalleriesController < ApplicationController
   end
 
   def create
-    @user = User.find(gallery_params)
-    @gallery = Gallery.create(user: @user)
+    @gallery = Gallery.create
     render json: @gallery
   end 
+
+# create nested 
 
   def show
     @gallery = Gallery.find(params[:id])
@@ -29,10 +30,6 @@ class Api::GalleriesController < ApplicationController
   private
   def gallery_params
     params.require(:gallery).permit(:name, :img_url, :user_id)
-  end 
-
-  def user_params
-    params.require(:user).permit(:name, :img_url, :id)
   end 
   
 end
