@@ -43,24 +43,23 @@ const UsersListArticle = (props) => {
         Add new user
       </CreateUserButton>
 
-      <UserCard />
-      {/* {props.users.map((user) => {
+      {props.users.map((user) => {
         return (
           <UserCard
             user={user}
             galleries={user.galleries}
             {...props}
             key={user._id}
-            componentWillMount={props.componentWillMount}
-            deleteUser={props.deleteUser}
-            handleUserChange={props.handleUserChange}
-            updateUser={props.updateUser}
-            createGallery={props.createGallery}
-            handleGalleryChange={props.handleGalleryChange}
-            updateGallery={props.updateGallery}
+            // componentWillMount={props.componentWillMount}
+            // deleteUser={props.deleteUser}
+            // handleUserChange={props.handleUserChange}
+            // updateUser={props.updateUser}
+            // createGallery={props.createGallery}
+            // handleGalleryChange={props.handleGalleryChange}
+            // updateGallery={props.updateGallery}
           />)
         })
-      } */}
+      }
 
       </FlexWrapper>
 

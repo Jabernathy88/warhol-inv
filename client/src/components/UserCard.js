@@ -33,22 +33,24 @@ const UserCard = (props) => {
     <UserCardWrapper>
       <p> hello from UserCard </p>
 
-      {/* <p>
+      <p>
         <strong>User: {props.user.name}</strong>
       </p>
 
       <p>
         Edit name: 
         <input type="text" 
-          name="name" 
-          value={props.user.name}
-          onChange={(event) => props.handleUserChange(props.user, event)}
-          onBlur={() => {props.updateUser(props.user)}
-          }/> 
+          // name="name" 
+          // value={props.user.name}
+          // onChange={(event) => props.handleUserChange(props.user, event)}
+          // onBlur={() => {props.updateUser(props.user)}
+          // }
+          /> 
 
         <span> 
           <button className="update-user-button"
-            onClick={() => {props.deleteUser(props.user)}}>
+            // onClick={() => {props.deleteUser(props.user)}}
+            >
             Delete user
           </button> 
         </span>
@@ -56,16 +58,18 @@ const UserCard = (props) => {
 
       <p>
         <button className="add-detail-button"
-          onClick={() => {
-              props.createGallery(props.user)
-            }
-          }>
+          // onClick={() => {
+          //     props.createGallery(props.user)
+          //   }
+          // }
+          >
           Add new gallery
         </button> 
       </p>
 
       <details>
         <summary>Galleries: ({props.user.galleries.length})</summary>
+        {/* {console.log(props.user.artworks)} */}
 
         {props.galleries.map((gallery) => {
             return (
@@ -105,7 +109,7 @@ const UserCard = (props) => {
                   </button> 
                 </p>
 
-                <details>
+                {/* <details>
                   <summary>Artworks: ({gallery.artworks.length})</summary>
 
                   {gallery.artworks.map((artwork) => {
@@ -157,12 +161,12 @@ const UserCard = (props) => {
                       )
                     })
                   }
-                </details>
+                </details> */}
               </ul>
             )
           })
         }
-      </details> */}
+      </details>
     </UserCardWrapper>
   )
 }

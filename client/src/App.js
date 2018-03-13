@@ -4,16 +4,33 @@ import HomePage from './components/HomePage'
 
 class App extends Component {
   state = {
-    users: []
+    users: [],
   }
 
-  // componentWillMount
+  componentWillMount() {
+    this.getUsersGalleriesAndArtworks()
+  }
+
+  getUsersGalleriesAndArtworks = async () => {
+    try {
+        const usersResponse = await axios.get(`/api/users`)
+        
+        await this.setState({
+            users: usersResponse.data
+        })
+        console.log(this.state.users)
+
+    }
+    catch (error) {
+        console.log(error)
+        await this.setState({error: error.message})
+    }
+  }
 
   render() {
     return (
       <HomePage
-        // componentWillMount={this.componentWillMount}
-        // users={this.state.users}
+        users={this.state.users}
         // createUser={this.createUser}
         // deleteUser={this.deleteUser}
         // handleUserChange={this.handleUserChange}

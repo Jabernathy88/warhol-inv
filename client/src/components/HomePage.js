@@ -11,8 +11,7 @@ const HomePage = (props) => {
       <Header/>
       <Nav/> 
       <UsersListArticle
-        // componentWillMount={props.componentWillMount}
-        // users={props.users}
+        users={props.users}
         // createUser={props.createUser}
         // deleteUser={props.deleteUser}
         // handleUserChange={props.handleUserChange}
