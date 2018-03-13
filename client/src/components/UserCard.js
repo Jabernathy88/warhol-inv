@@ -69,7 +69,6 @@ const UserCard = (props) => {
 
       <details>
         <summary>Galleries: ({props.user.galleries.length})</summary>
-        {/* {console.log(props.user.artworks)} */}
 
         {props.galleries.map((gallery) => {
             return (
@@ -109,7 +108,7 @@ const UserCard = (props) => {
                   </button> 
                 </p>
 
-                {/* <details>
+                <details>
                   <summary>Artworks: ({gallery.artworks.length})</summary>
 
                   {gallery.artworks.map((artwork) => {
@@ -151,7 +150,7 @@ const UserCard = (props) => {
 
                               <p>Edit image: </p>
                               <ul>
-                                <img height="200px" alt="work of art, small" src={artwork.img}/>
+                                <img height="200px" alt="work of art, small" src={artwork.img_url}/>
                               </ul>
                             </ul>
                           </details>
@@ -161,7 +160,7 @@ const UserCard = (props) => {
                       )
                     })
                   }
-                </details> */}
+                </details>
               </ul>
             )
           })
