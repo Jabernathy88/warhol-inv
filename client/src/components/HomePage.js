@@ -12,11 +12,11 @@ const HomePage = (props) => {
       <Nav/> 
       <UsersListArticle
         users={props.users}
-        // createUser={props.createUser}
-        // deleteUser={props.deleteUser}
-        // handleUserChange={props.handleUserChange}
-        // updateUser={props.updateUser}
-        // createGallery={props.createGallery}
+        createUser={props.createUser}
+        deleteUser={props.deleteUser}
+        handleUserChange={props.handleUserChange}
+        updateUser={props.updateUser}
+        createGallery={props.createGallery}
         // handleGalleryChange={props.handleGalleryChange}
         // updateGallery={props.updateGallery}
         />

@@ -31,25 +31,23 @@ const UserCardWrapper = styled.div `
 const UserCard = (props) => {
   return (
     <UserCardWrapper>
-      <p> hello from UserCard </p>
-
       <p>
-        <strong>User: {props.user.name}</strong>
+        <strong>User: {props.user.name}</strong> | (id# {props.user.id})
       </p>
 
       <p>
         Edit name: 
         <input type="text" 
-          // name="name" 
-          // value={props.user.name}
-          // onChange={(event) => props.handleUserChange(props.user, event)}
-          // onBlur={() => {props.updateUser(props.user)}
-          // }
+          name="name" 
+          value={props.user.name}
+          onChange={(event) => props.handleUserChange(props.user, event)}
+          onBlur={() => {props.updateUser(props.user)}
+          }
           /> 
 
         <span> 
           <button className="update-user-button"
-            // onClick={() => {props.deleteUser(props.user)}}
+            onClick={() => {props.deleteUser(props.user)}}
             >
             Delete user
           </button> 
@@ -58,10 +56,10 @@ const UserCard = (props) => {
 
       <p>
         <button className="add-detail-button"
-          // onClick={() => {
-          //     props.createGallery(props.user)
-          //   }
-          // }
+          onClick={() => {
+              props.createGallery(props.user.id)
+            }
+          }
           >
           Add new gallery
         </button> 

@@ -18,8 +18,6 @@ class App extends Component {
         await this.setState({
             users: usersResponse.data
         })
-        console.log(this.state.users)
-
     }
     catch (error) {
         console.log(error)
@@ -27,23 +25,77 @@ class App extends Component {
     }
   }
 
-// C USER
+  createUser = async() => {
+    const response = await axios.post(`/api/users`)
+    const updatedUser = response.data
+    const updatedUsers = [...this.state.users]
 
-// R USER
+    updatedUsers.unshift(updatedUser)
+    this.setState({users: updatedUsers})
+  }
 
-// U USER
+  deleteUser = async(user) => {
+    try {
+      await axios.delete(`/api/users/${user.id}`)
 
-// D USER 
+      const indexToDelete = this.state.users.indexOf(user)
+      const updatedUsers = [...this.state.users]
+      updatedUsers.splice(indexToDelete, 1)
+
+      this.setState({users: updatedUsers})
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  handleUserChange = (user, event) => {
+    const updatedUsers = [...this.state.users]
+
+    const userToUpdate = updatedUsers.find((updatedUser) => {
+      return updatedUser._id === user._id
+    })
+
+    userToUpdate[event.target.name] = event.target.value
+    this.setState({users: updatedUsers})
+  }
+
+  updateUser = async(user) => {
+    try {
+      await axios.patch(`/api/users/${user.id}`, user)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+  createGallery = async(user_id) => {
+    await axios.post(`/api/galleries`, user_id)
+
+    // const userWithNewGallery = response.data
+    // console.log("This updatedUser is: ", userWithNewGallery)
+
+    // const updatedUsers = [...this.state.users]
+
+    // const userToUpdate = updatedUsers.find((newUser) => {
+    //   return newUser._id === user._id
+    // })
+    // userToUpdate.galleries = userWithNewGallery.galleries
+
+    // this.setState({users: updatedUsers})
+  }
+  
+  // D 
+  // U
 
   render() {
     return (
       <HomePage
         users={this.state.users}
-        // createUser={this.createUser}
-        // deleteUser={this.deleteUser}
-        // handleUserChange={this.handleUserChange}
-        // updateUser={this.updateUser}
-        // createGallery={this.createGallery}
+        createUser={this.createUser}
+        deleteUser={this.deleteUser}
+        handleUserChange={this.handleUserChange}
+        updateUser={this.updateUser}
+        createGallery={this.createGallery}
         // handleGalleryChange={this.handleGalleryChange}
         // updateGallery={this.updateGallery}
       />

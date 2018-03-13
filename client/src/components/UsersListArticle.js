@@ -38,7 +38,7 @@ const UsersListArticle = (props) => {
       <strong>recent users</strong>
 
       <CreateUserButton 
-        // onClick={props.createUser}
+        onClick={props.createUser}
         >
         Add new user
       </CreateUserButton>
@@ -51,10 +51,10 @@ const UsersListArticle = (props) => {
             {...props}
             key={user._id}
             // componentWillMount={props.componentWillMount}
-            // deleteUser={props.deleteUser}
-            // handleUserChange={props.handleUserChange}
-            // updateUser={props.updateUser}
-            // createGallery={props.createGallery}
+            deleteUser={props.deleteUser}
+            handleUserChange={props.handleUserChange}
+            updateUser={props.updateUser}
+            createGallery={props.createGallery}
             // handleGalleryChange={props.handleGalleryChange}
             // updateGallery={props.updateGallery}
           />)

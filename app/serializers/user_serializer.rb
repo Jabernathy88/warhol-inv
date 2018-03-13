@@ -9,6 +9,6 @@ class UserSerializer < ActiveModel::Serializer
   
   class ArtworkSerializer < ActiveModel::Serializer
     attributes :name, :artist, :img_url, :gallery_id
-  end 
+  end
 
 end

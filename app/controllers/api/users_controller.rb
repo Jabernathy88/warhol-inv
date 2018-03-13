@@ -5,9 +5,9 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.create()
     render json: @user
-  end
+  end 
 
   def show
     @user = User.find(params[:id])
@@ -21,13 +21,13 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id]).delete
+    @user = User.find(params[:id]).destroy
     render status: :ok
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :img_url)
+    params.require(:user).permit(:name, :img_url, :id)
   end 
   
 end
