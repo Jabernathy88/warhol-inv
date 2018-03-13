@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :users do
-      resources :galleries do
-        resources :artworks
-      end
-    end
-  end
+    resources :users
+    resources :galleries
+    resources :artworks
 
+    # custom
+    post 'users/:id/galleries', to: 'galleries#create_under_user'
+
+  end
 end
