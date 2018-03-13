@@ -50,13 +50,13 @@ const UsersListArticle = (props) => {
             galleries={user.galleries}
             {...props}
             key={user._id}
-            // componentWillMount={props.componentWillMount}
             deleteUser={props.deleteUser}
             handleUserChange={props.handleUserChange}
             updateUser={props.updateUser}
             createGallery={props.createGallery}
-            // handleGalleryChange={props.handleGalleryChange}
-            // updateGallery={props.updateGallery}
+            deleteGallery={props.deleteGallery}
+            handleGalleryChange={props.handleGalleryChange}
+            updateGallery={props.updateGallery}
           />)
         })
       }

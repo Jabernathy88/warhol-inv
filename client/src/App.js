@@ -72,11 +72,7 @@ class App extends Component {
     const response = await axios.post(`/api/users/${user.id}/galleries`)
     const newGallery = response.data
     console.log(response.data)
-
-
   }
-
-
     // const userWithNewGallery = response.data
     // console.log("This updatedUser is: ", userWithNewGallery)
 
@@ -89,9 +85,46 @@ class App extends Component {
 
     // this.setState({users: updatedUsers})
   
-  
-  // D 
-  // U
+  deleteGallery = async(gallery) => {
+    try {
+      await axios.delete(`/api/galleries/${gallery.id}`)
+
+      // const indexToDelete = this.state.users.indexOf(user)
+      // const updatedUsers = [...this.state.users]
+      // updatedUsers.splice(indexToDelete, 1)
+
+      // this.setState({users: updatedUsers})
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  handleGalleryChange = (user, gallery, event) => {
+    const updatedUsers = [...this.state.users]
+    const userToUpdate = updatedUsers.find((newUser) => {
+      return newUser.id === user.id
+    })
+    const updatedGalleries = [...userToUpdate.galleries]
+    const galleryToUpdate = updatedGalleries.find((newGallery) => {
+      return newGallery.id === gallery.id
+    })
+    galleryToUpdate[event.target.name] = event.target.value
+    userToUpdate.galleries = updatedGalleries
+    this.setState({users: updatedUsers})
+  }
+
+  updateGallery = async(gallery) => {
+    console.log("Gallery being sent:", gallery)
+    try {
+      const response = await axios.patch(`/api/galleries/${gallery.id}`, gallery)
+      console.log("This response.data was: ", response.data)
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
 
   render() {
     return (
@@ -102,8 +135,9 @@ class App extends Component {
         handleUserChange={this.handleUserChange}
         updateUser={this.updateUser}
         createGallery={this.createGallery}
-        // handleGalleryChange={this.handleGalleryChange}
-        // updateGallery={this.updateGallery}
+        deleteGallery={this.deleteGallery}
+        handleGalleryChange={this.handleGalleryChange}
+        updateGallery={this.updateGallery}
       />
     )
   }

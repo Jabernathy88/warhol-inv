@@ -26,7 +26,7 @@ class Api::GalleriesController < ApplicationController
   end
 
   def destroy
-    @gallery = Gallery.find(params[:id]).delete
+    @gallery = Gallery.find(params[:id]).destroy
     render status: :ok
   end
 

@@ -17,8 +17,9 @@ const HomePage = (props) => {
         handleUserChange={props.handleUserChange}
         updateUser={props.updateUser}
         createGallery={props.createGallery}
-        // handleGalleryChange={props.handleGalleryChange}
-        // updateGallery={props.updateGallery}
+        deleteGallery={props.deleteGallery}
+        handleGalleryChange={props.handleGalleryChange}
+        updateGallery={props.updateGallery}
         />
       <Footer/>
     </div>

@@ -79,14 +79,14 @@ const UserCard = (props) => {
                     value={gallery.name}
                     onChange={(event) => props.handleGalleryChange(props.user, gallery, event)}
                     onBlur={() => {
-                      props.updateGallery(props.user)}}
+                      props.updateGallery(gallery)}}
                     /> 
 
 
                   <span> 
                     <button className="update-user-button"
                       onClick={() => {
-                        // props.deleteUser(props.user)
+                        props.deleteGallery(gallery)
                       }}>
                       Delete gallery
                     </button> 
