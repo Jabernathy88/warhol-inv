@@ -57,10 +57,8 @@ const UserCard = (props) => {
       <p>
         <button className="add-detail-button"
           onClick={() => {
-              props.createGallery(props.user.id)
-            }
-          }
-          >
+              props.createGallery(props.user)
+              }}>
           Add new gallery
         </button> 
       </p>

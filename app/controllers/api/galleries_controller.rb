@@ -7,9 +7,12 @@ class Api::GalleriesController < ApplicationController
   def create
     @gallery = Gallery.create
     render json: @gallery
+  end
+  
+  def create_under_user
+      @user = User.find(params[:id])
+      @gallery = Gallery.create(user: @user, name: 'New Gallery')
   end 
-
-# create nested 
 
   def show
     @gallery = Gallery.find(params[:id])

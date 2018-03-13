@@ -27,10 +27,10 @@ class App extends Component {
 
   createUser = async() => {
     const response = await axios.post(`/api/users`)
-    const updatedUser = response.data
+    const newUser = response.data
     const updatedUsers = [...this.state.users]
 
-    updatedUsers.unshift(updatedUser)
+    updatedUsers.unshift(newUser)
     this.setState({users: updatedUsers})
   }
 
@@ -68,14 +68,13 @@ class App extends Component {
   }
 
 
-  createGallery = async(userId) => {
-    const user_id = parseInt(userId, 10) 
-    try { 
-      await axios.post(`/api/galleries`, user_id)
-    } catch (error) {
-      console.log(error)
-    }
-  
+  createGallery = async(user) => {
+    const response = await axios.post(`/api/users/${user.id}/galleries`)
+    const newGallery = response.data
+    console.log(response.data)
+
+
+  }
 
 
     // const userWithNewGallery = response.data
@@ -89,7 +88,7 @@ class App extends Component {
     // userToUpdate.galleries = userWithNewGallery.galleries
 
     // this.setState({users: updatedUsers})
-  }
+  
   
   // D 
   // U
