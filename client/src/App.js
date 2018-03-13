@@ -4,7 +4,7 @@ import HomePage from './components/HomePage'
 
 class App extends Component {
   state = {
-    users: [],
+    users: [], 
   }
 
   componentWillMount() {
