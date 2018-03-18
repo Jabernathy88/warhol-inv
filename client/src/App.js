@@ -113,17 +113,45 @@ class App extends Component {
 
   updateGallery = async(gallery) => {
     try {
-      const response = await axios.patch(`/api/galleries/${gallery.id}`, gallery)
+      const response = await axios.patch(`/api/galleries/${gallery.id}`)
     } catch (error) {
       console.log(error)
     }
   }
 
-  // here 
+  createArtwork = async(gallery, user) => {
+    const response = await axios.post(`/api/galleries/${gallery.id}/artworks`)
+    const userWithNewArtwork = response.data
+    console.log(userWithNewArtwork)
 
-  // C ARTWORK
+    const updatedUsers = [...this.state.users]
 
-  // D ARTWORK
+    const userToUpdate = updatedUsers.find((newUser) => {
+      return newUser.id === user.id
+    })
+    userToUpdate.galleries = userWithNewArtwork.galleries
+    
+    this.setState({users: updatedUsers})
+  }
+
+  deleteArtwork = async(artwork, user) => {
+    try {
+      const response = await axios.delete(`/api/artworks/${artwork.id}`)
+      const userWithFewerArtworks = response.data
+      console.log("The user deleting a gallery is: ", userWithFewerArtworks)
+
+      const updatedUsers = [...this.state.users]
+
+      const userToUpdate = updatedUsers.find((newUser) => {
+        return newUser.id === user.id
+      })
+      userToUpdate.galleries = userWithFewerArtworks.galleries
+
+      this.setState({users: updatedUsers})
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   // U ARTWORK 
 
@@ -139,6 +167,8 @@ class App extends Component {
         deleteGallery={this.deleteGallery}
         handleGalleryChange={this.handleGalleryChange}
         updateGallery={this.updateGallery}
+        createArtwork={this.createArtwork}
+        deleteArtwork={this.deleteArtwork}
       />
     )
   }

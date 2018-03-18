@@ -9,6 +9,13 @@ class Api::ArtworksController < ApplicationController
     render json: @artwork
   end 
 
+  def create_under_gallery
+    @gallery = Gallery.find(params[:id])
+    @user = User.find(@gallery.user_id)
+    @artwork = Artwork.create(gallery: @gallery, name: 'New artwork name')
+    render json: @user
+  end
+
   def show
     @artwork = Artwork.find(params[:id])
     render json: @artwork
@@ -21,8 +28,11 @@ class Api::ArtworksController < ApplicationController
   end
 
   def destroy
-    @artwork = Artwork.find(params[:id]).delete
-    render status: :ok
+    @artwork = Artwork.find(params[:id])
+    @gallery = Gallery.find(@artwork.gallery_id)
+    @user = User.find(@gallery.user_id)
+    @artwork.destroy
+    render json: @user, status: :ok
   end
 
   private

@@ -57,7 +57,7 @@ const UserCard = (props) => {
 
       <p>
         <button className="add-detail-button"
-          onClick={(event) => {
+          onClick={() => {
             console.log(props.user)
             props.createGallery(props.user)
             }}>
@@ -99,9 +99,8 @@ const UserCard = (props) => {
                 <p>
                   <button className="update-user-button"
                     onClick={() => {
-                        // props.createGallery(props.user)
-                      }
-                    }>
+                      props.createArtwork(gallery, props.user)
+                      }}>
                     Add new artwork
                   </button> 
                 </p>
@@ -130,7 +129,7 @@ const UserCard = (props) => {
                                 <span> 
                                   <button className="update-user-button"
                                   onClick={() => { 
-                                    // props.deleteArtwork(props.user) 
+                                    props.deleteArtwork(artwork, props.user) 
                                   }}>
                                   Delete artwork
                                   </button> 
