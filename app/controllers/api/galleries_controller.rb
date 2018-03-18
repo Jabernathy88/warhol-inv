@@ -10,8 +10,9 @@ class Api::GalleriesController < ApplicationController
   end
   
   def create_under_user
-      @user = User.find(params[:id])
-      @gallery = Gallery.create(user: @user, name: 'New Gallery')
+    @user = User.find(params[:id])
+    @gallery = Gallery.create(user: @user, name: 'New gallery name')
+    render json: @user
   end 
 
   def show
@@ -26,8 +27,10 @@ class Api::GalleriesController < ApplicationController
   end
 
   def destroy
-    @gallery = Gallery.find(params[:id]).destroy
-    render status: :ok
+    @gallery = Gallery.find(params[:id])
+    @user = User.find(@gallery.user_id)
+    @gallery.destroy
+    render json: @user, status: :ok
   end
 
   private

@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :img_url
+  attributes :id, :name, :img_url, :created_at, :updated_at, :galleries
   has_many :galleries
   
   class GallerySerializer < ActiveModel::Serializer

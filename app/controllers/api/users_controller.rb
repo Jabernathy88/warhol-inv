@@ -1,11 +1,15 @@
 class Api::UsersController < ApplicationController
   def index
-    @users = User.all
+    @sorted_users = 
+      User.all.sort_by do |user|  
+        user.updated_at
+      end 
+    @users = @sorted_users.reverse
     render json: @users
   end
 
   def create
-    @user = User.create()
+    @user = User.create(name: "New user's name")
     render json: @user
   end 
 

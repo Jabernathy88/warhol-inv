@@ -32,7 +32,8 @@ const UserCard = (props) => {
   return (
     <UserCardWrapper>
       <p>
-        <strong>User: {props.user.name}</strong> | (id# {props.user.id})
+        <strong>User: {props.user.name}</strong> 
+        {/* | (id# {props.user.id}) */}
       </p>
 
       <p>
@@ -56,9 +57,10 @@ const UserCard = (props) => {
 
       <p>
         <button className="add-detail-button"
-          onClick={() => {
-              props.createGallery(props.user)
-              }}>
+          onClick={(event) => {
+            console.log(props.user)
+            props.createGallery(props.user)
+            }}>
           Add new gallery
         </button> 
       </p>
@@ -86,7 +88,7 @@ const UserCard = (props) => {
                   <span> 
                     <button className="update-user-button"
                       onClick={() => {
-                        props.deleteGallery(gallery)
+                        props.deleteGallery(gallery, props.user)
                       }}>
                       Delete gallery
                     </button> 
