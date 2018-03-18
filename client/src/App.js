@@ -5,6 +5,7 @@ import HomePage from './components/HomePage'
 class App extends Component {
   state = {
     users: [],
+    galleries: [],
   }
 
   componentWillMount() {
@@ -15,6 +16,7 @@ class App extends Component {
     try {
         const usersResponse = await axios.get(`/api/users`)
         await this.setState({users: usersResponse.data})
+        console.log(this.state)
     }
     catch (error) {
         console.log(error)
@@ -52,7 +54,6 @@ class App extends Component {
       return updatedUser.id === user.id
     })
 
-    console.log(userToUpdate)
     userToUpdate[event.target.name] = event.target.value
     this.setState({users: updatedUsers})
   }
@@ -113,7 +114,7 @@ class App extends Component {
 
   updateGallery = async(gallery) => {
     try {
-      const response = await axios.patch(`/api/galleries/${gallery.id}`)
+      const response = await axios.patch(`/api/galleries/${gallery.id}`, gallery)
     } catch (error) {
       console.log(error)
     }
@@ -153,7 +154,30 @@ class App extends Component {
     }
   }
 
-  // U ARTWORK 
+  handleArtworkChange = (gallery, artwork, event) => {
+
+    // still here 
+
+    const updatedUsers = [...this.state.users]
+    const userToUpdate = updatedUsers.find((newUser) => {
+      return newUser.id === user.id
+    })
+    const updatedGalleries = [...userToUpdate.galleries]
+    const galleryToUpdate = updatedGalleries.find((newGallery) => {
+      return newGallery.id === gallery.id
+    })
+    galleryToUpdate[event.target.name] = event.target.value
+    userToUpdate.galleries = updatedGalleries
+    this.setState({users: updatedUsers})
+  }
+
+  updateArtwork = async(artwork) => {
+    try {
+      const response = await axios.patch(`/api/artworks/${artwork.id}`, artwork)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   render() {
     return (
@@ -169,6 +193,8 @@ class App extends Component {
         updateGallery={this.updateGallery}
         createArtwork={this.createArtwork}
         deleteArtwork={this.deleteArtwork}
+        handleArtworkChange={this.handleArtworkChange}
+        updateArtwork={this.updateArtwork}
       />
     )
   }

@@ -12,7 +12,7 @@ class Api::ArtworksController < ApplicationController
   def create_under_gallery
     @gallery = Gallery.find(params[:id])
     @user = User.find(@gallery.user_id)
-    @artwork = Artwork.create(gallery: @gallery, name: 'New artwork name')
+    @artwork = Artwork.create(gallery: @gallery, name: 'New artwork name', artist: 'Artist name', img_url: './img/ayanas-purplebg.png')
     render json: @user
   end
 

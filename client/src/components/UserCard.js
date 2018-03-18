@@ -32,7 +32,7 @@ const UserCard = (props) => {
   return (
     <UserCardWrapper>
       <p>
-        <strong>User: {props.user.name}</strong> 
+        <strong>User: {props.user.name}</strong> | id: {props.user.id}
         {/* | (id# {props.user.id}) */}
       </p>
 
@@ -71,9 +71,9 @@ const UserCard = (props) => {
         {props.galleries.map((gallery) => {
             return (
 
-              <ul className="gallery-details" key={gallery._id}>
+              <ul className="gallery-details" key={gallery.id}>
 
-                <p><strong>Gallery: {gallery.name}</strong></p>
+                <p><strong>Gallery: {gallery.name}</strong> | id: {gallery.id} </p>
 
                 <p>
                   Edit name: <input type="text" 
@@ -111,9 +111,9 @@ const UserCard = (props) => {
                   {gallery.artworks.map((artwork) => {
                       return (
 
-                        <ul className="artwork-list" key={artwork._id}>
+                        <ul className="artwork-list" key={artwork.id}>
 
-                          <p><strong>Artwork: {artwork.name}</strong></p>
+                          <p><strong>Artwork: {artwork.name}</strong> | id: {artwork.id} </p>
 
                           <details> 
                             <summary>Preview:</summary>
@@ -122,8 +122,9 @@ const UserCard = (props) => {
                               <input type="text" 
                                 name="name" 
                                 value={artwork.name}
-                                onChange={(event) => props.handleChange(props.user, event)}
-                                // onBlur={() => {props.updateArtwork(props.user)}}
+                                onChange={(event) => props.handleArtworkChange(artwork.gallery, artwork, event)}
+                                onBlur={() => {
+                                  props.updateArtwork(artwork)}}
                                 />
                                 
                                 <span> 

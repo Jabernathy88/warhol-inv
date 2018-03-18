@@ -11,7 +11,7 @@ class Api::GalleriesController < ApplicationController
   
   def create_under_user
     @user = User.find(params[:id])
-    @gallery = Gallery.create(user: @user, name: 'New gallery name')
+    @gallery = Gallery.create(user: @user, name: 'New gallery name', img_url: './img/ayanas-purplebg.png')
     render json: @user
   end 
 

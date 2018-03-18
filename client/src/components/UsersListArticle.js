@@ -49,7 +49,7 @@ const UsersListArticle = (props) => {
             user={user}
             galleries={user.galleries}
             {...props}
-            key={user._id}
+            key={user.id}
             deleteUser={props.deleteUser}
             handleUserChange={props.handleUserChange}
             updateUser={props.updateUser}
@@ -59,6 +59,8 @@ const UsersListArticle = (props) => {
             updateGallery={props.updateGallery}
             createArtwork={props.createArtwork}
             deleteArtwork={props.deleteArtwork}
+            handleArtworkChange={props.handleArtworkChange}
+            updateArtwork={props.handleArtworkChange}
           />)
         })
       }
