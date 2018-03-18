@@ -158,17 +158,17 @@ class App extends Component {
 
     // still here 
 
-    const updatedUsers = [...this.state.users]
-    const userToUpdate = updatedUsers.find((newUser) => {
-      return newUser.id === user.id
-    })
-    const updatedGalleries = [...userToUpdate.galleries]
-    const galleryToUpdate = updatedGalleries.find((newGallery) => {
-      return newGallery.id === gallery.id
-    })
-    galleryToUpdate[event.target.name] = event.target.value
-    userToUpdate.galleries = updatedGalleries
-    this.setState({users: updatedUsers})
+    // const updatedUsers = [...this.state.users]
+    // const userToUpdate = updatedUsers.find((newUser) => {
+    //   return newUser.id === user.id
+    // })
+    // const updatedGalleries = [...userToUpdate.galleries]
+    // const galleryToUpdate = updatedGalleries.find((newGallery) => {
+    //   return newGallery.id === gallery.id
+    // })
+    // galleryToUpdate[event.target.name] = event.target.value
+    // userToUpdate.galleries = updatedGalleries
+    // this.setState({users: updatedUsers})
   }
 
   updateArtwork = async(artwork) => {
