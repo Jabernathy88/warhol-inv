@@ -4,8 +4,7 @@ import HomePage from './components/HomePage'
 
 class App extends Component {
   state = {
-    users: [],
-    galleries: [],
+    users: []
   }
 
   componentWillMount() {
@@ -16,7 +15,6 @@ class App extends Component {
     try {
         const usersResponse = await axios.get(`/api/users`)
         await this.setState({users: usersResponse.data})
-        console.log(this.state)
     }
     catch (error) {
         console.log(error)
@@ -107,6 +105,7 @@ class App extends Component {
     const galleryToUpdate = updatedGalleries.find((newGallery) => {
       return newGallery.id === gallery.id
     })
+    console.log(updatedGalleries)
     galleryToUpdate[event.target.name] = event.target.value
     userToUpdate.galleries = updatedGalleries
     this.setState({users: updatedUsers})
@@ -154,21 +153,33 @@ class App extends Component {
     }
   }
 
-  handleArtworkChange = (gallery, artwork, event) => {
+  handleArtworkChange = (artwork, userId, event) => {
+    const galleryId = artwork.gallery_id
+    const artworkId = artwork.id
+    const updatedUsers = [...this.state.users]
 
-    // still here 
+    // problem is in state management. 
 
-    // const updatedUsers = [...this.state.users]
-    // const userToUpdate = updatedUsers.find((newUser) => {
-    //   return newUser.id === user.id
-    // })
-    // const updatedGalleries = [...userToUpdate.galleries]
-    // const galleryToUpdate = updatedGalleries.find((newGallery) => {
-    //   return newGallery.id === gallery.id
-    // })
-    // galleryToUpdate[event.target.name] = event.target.value
-    // userToUpdate.galleries = updatedGalleries
-    // this.setState({users: updatedUsers})
+    let userToUpdate = {}
+    let updatedGalleries = []
+    let updatedArtworks = []
+    
+    userToUpdate = updatedUsers.find((newUser) => {
+      return newUser.id === userId
+    })
+    updatedGalleries = [...userToUpdate.galleries]
+    const galleryToUpdate = updatedGalleries.find((newGallery) => {
+      return newGallery.id === galleryId
+    })
+    updatedArtworks = [...galleryToUpdate.artworks]
+    const artworkToUpdate = updatedArtworks.find((newArtwork) => {
+      return newArtwork.id === artworkId
+    })
+
+    artworkToUpdate[event.target.name] = event.target.value
+    galleryToUpdate.artworks = updatedArtworks
+    userToUpdate.galleries = updatedGalleries
+    this.setState({users: updatedUsers})
   }
 
   updateArtwork = async(artwork) => {

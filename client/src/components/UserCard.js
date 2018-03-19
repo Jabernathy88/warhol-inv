@@ -122,7 +122,7 @@ const UserCard = (props) => {
                               <input type="text" 
                                 name="name" 
                                 value={artwork.name}
-                                onChange={(event) => props.handleArtworkChange(artwork.gallery, artwork, event)}
+                                onChange={(event) => props.handleArtworkChange(artwork, props.user.id, event)}
                                 onBlur={() => {
                                   props.updateArtwork(artwork)}}
                                 />
