@@ -154,32 +154,30 @@ class App extends Component {
   }
 
   handleArtworkChange = (artwork, userId, event) => {
-    const galleryId = artwork.gallery_id
-    const artworkId = artwork.id
-    const updatedUsers = [...this.state.users]
+    let galleryId = artwork.gallery_id
+    let artworkId = artwork.id
+    // const updatedUsers = [...this.state.users]
 
-    // problem is in state management. 
-
-    let userToUpdate = {}
-    let updatedGalleries = []
-    let updatedArtworks = []
+    // let userToUpdate = {}
+    // let updatedGalleries = []
+    // let updatedArtworks = []
     
-    userToUpdate = updatedUsers.find((newUser) => {
-      return newUser.id === userId
-    })
-    updatedGalleries = [...userToUpdate.galleries]
-    const galleryToUpdate = updatedGalleries.find((newGallery) => {
-      return newGallery.id === galleryId
-    })
-    updatedArtworks = [...galleryToUpdate.artworks]
-    const artworkToUpdate = updatedArtworks.find((newArtwork) => {
-      return newArtwork.id === artworkId
-    })
+    // userToUpdate = updatedUsers.find((newUser) => {
+    //   return newUser.id === userId
+    // })
+    // updatedGalleries = [...userToUpdate.galleries]
+    // const galleryToUpdate = updatedGalleries.find((newGallery) => {
+    //   return newGallery.id === galleryId
+    // })
+    // updatedArtworks = [...galleryToUpdate.artworks]
+    // const artworkToUpdate = updatedArtworks.find((newArtwork) => {
+    //   return newArtwork.id === artworkId
+    // })
 
-    artworkToUpdate[event.target.name] = event.target.value
-    galleryToUpdate.artworks = updatedArtworks
-    userToUpdate.galleries = updatedGalleries
-    this.setState({users: updatedUsers})
+    // artworkToUpdate[event.target.name] = event.target.value
+    // galleryToUpdate.artworks = updatedArtworks
+    // userToUpdate.galleries = updatedGalleries
+    // this.setState({users: updatedUsers})
   }
 
   updateArtwork = async(artwork) => {
