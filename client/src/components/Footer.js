@@ -24,7 +24,7 @@ class Footer extends Component {
       <FooterWrapper>
         <FlexWrapper>
         <a href="./"><span className="nav-option"><strong> | home | </strong></span></a> 
-        <a href="https://github.com/Jabernathy88/react-project-warhol/blob/master/README.md" target="_blank"><span className="nav-option"><strong> | about | </strong></span></a>        </FlexWrapper>
+        <a href="https://github.com/Jabernathy88/warhol-inv/blob/master/README.md" target="_blank"><span className="nav-option"><strong> | about | </strong></span></a>        </FlexWrapper>
       </FooterWrapper>
     )
   }
