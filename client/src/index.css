@@ -85,7 +85,12 @@ button {
   background: rgb(200,255,255);
 }
 
-.main-dash-holder:hover, 
+.nav-option {
+  padding: 6px 0;
+  display: inline-block;
+}
+
+.nav-option:hover, .main-dash-holder:hover, 
 input:hover, button:hover {
   background: rgb(255,200,255);
 }
@@ -101,3 +106,4 @@ input, .update-user-button {
 details {
   margin: 5px 0; 
 }
+
