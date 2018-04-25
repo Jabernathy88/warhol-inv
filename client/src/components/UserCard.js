@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactLoading from 'react-loading'
 import styled from 'styled-components'
 
 const UserCardWrapper = styled.div `
@@ -33,7 +34,6 @@ const UserCard = (props) => {
     <UserCardWrapper>
       <p>
         <strong>User: {props.user.name}</strong> | id: {props.user.id}
-        {/* | (id# {props.user.id}) */}
       </p>
 
       <p>
