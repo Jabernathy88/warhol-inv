@@ -23,7 +23,7 @@ class Api::ArtworksController < ApplicationController
 
   def update
     @artwork = Artwork.find(params[:id])
-    @artwork.update!(artwork_params)
+    @artwork.update(artwork_params)
     
     render json: @artwork
   end

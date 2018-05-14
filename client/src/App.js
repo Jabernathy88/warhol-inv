@@ -191,8 +191,6 @@ class App extends Component {
   render() {
     return (
       <div>
-      {/* <ReactLoading type={`spinningBubbles`} color={`rgb(120,255,255)`} height={60} width={60} />
-      <ReactLoading type={`spinningBubbles`} color={`rgb(255,120,255)`} height={40} width={40} /> */}
       <HomePage
         users={this.state.users}
         createUser={this.createUser}

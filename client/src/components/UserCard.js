@@ -114,6 +114,7 @@ const UserCard = (props) => {
                         <ul className="artwork-list" key={artwork.id}>
 
                           <p><strong>Artwork: {artwork.name}</strong> | id: {artwork.id} </p>
+                          {/* {console.log(artwork)} */}
 
                           <details> 
                             <summary>Preview:</summary>
