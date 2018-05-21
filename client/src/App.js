@@ -4,14 +4,19 @@ import HomePage from './components/HomePage'
 
 class App extends Component {
   state = {
-    users: []
+    users: [],
+    galleries: [],
+    artworks: []
   }
 
+  // call ajax and set state
   componentWillMount() {
-    this.getUsersGalleriesAndArtworks()
+    this.getUsers()
+    this.getGalleries()
+    this.getArtworks()
+    console.log(this.state)
   }
-
-  getUsersGalleriesAndArtworks = async () => {
+  getUsers = async () => {
     try {
         const usersResponse = await axios.get(`/api/users`)
         await this.setState({users: usersResponse.data})
@@ -21,7 +26,28 @@ class App extends Component {
         await this.setState({error: error.message})
     }
   }
+  getGalleries = async () => {
+    try {
+        const galleriesResponse = await axios.get(`/api/galleries`)
+        await this.setState({galleries: galleriesResponse.data})
+    }
+    catch (error) {
+        console.log(error)
+        await this.setState({error: error.message})
+    }
+  }
+  getArtworks = async () => {
+    try {
+        const artworksResponse = await axios.get(`/api/artwork`)
+        await this.setState({artworks: artworksResponse.data})
+    }
+    catch (error) {
+        console.log(error)
+        await this.setState({error: error.message})
+    }
+  }
 
+  // crud users
   createUser = async() => {
     const response = await axios.post(`/api/users`)
     const newUser = response.data
@@ -30,7 +56,23 @@ class App extends Component {
     updatedUsers.unshift(newUser)
     this.setState({users: updatedUsers})
   }
+  handleUserChange = (user, event) => {
+    const updatedUsers = [...this.state.users]
 
+    const userToUpdate = updatedUsers.find((updatedUser) => {
+      return updatedUser.id === user.id
+    })
+
+    userToUpdate[event.target.name] = event.target.value
+    this.setState({users: updatedUsers})
+  }
+  updateUser = async(user) => {
+    try {
+      await axios.patch(`/api/users/${user.id}`, user)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   deleteUser = async(user) => {
     try {
       await axios.delete(`/api/users/${user.id}`)
@@ -45,25 +87,7 @@ class App extends Component {
     }
   }
 
-  handleUserChange = (user, event) => {
-    const updatedUsers = [...this.state.users]
-
-    const userToUpdate = updatedUsers.find((updatedUser) => {
-      return updatedUser.id === user.id
-    })
-
-    userToUpdate[event.target.name] = event.target.value
-    this.setState({users: updatedUsers})
-  }
-
-  updateUser = async(user) => {
-    try {
-      await axios.patch(`/api/users/${user.id}`, user)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
+  // crud galleries
   createGallery = async(user) => {
     const response = await axios.post(`/api/users/${user.id}/galleries`)
     const userWithNewGallery = response.data
@@ -75,8 +99,28 @@ class App extends Component {
     userToUpdate.galleries = userWithNewGallery.galleries
     
     this.setState({users: updatedUsers})
+  }  
+  handleGalleryChange = (user, gallery, event) => {
+    const updatedUsers = [...this.state.users]
+    const userToUpdate = updatedUsers.find((newUser) => {
+      return newUser.id === user.id
+    })
+    const updatedGalleries = [...userToUpdate.galleries]
+    const galleryToUpdate = updatedGalleries.find((newGallery) => {
+      return newGallery.id === gallery.id
+    })
+    console.log(updatedGalleries)
+    galleryToUpdate[event.target.name] = event.target.value
+    userToUpdate.galleries = updatedGalleries
+    this.setState({users: updatedUsers})
   }
-  
+  updateGallery = async(gallery) => {
+    try {
+      const response = await axios.patch(`/api/galleries/${gallery.id}`, gallery)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   deleteGallery = async(gallery, user) => {
     try {
       const response = await axios.delete(`/api/galleries/${gallery.id}`)
@@ -96,29 +140,7 @@ class App extends Component {
     }
   }
 
-  handleGalleryChange = (user, gallery, event) => {
-    const updatedUsers = [...this.state.users]
-    const userToUpdate = updatedUsers.find((newUser) => {
-      return newUser.id === user.id
-    })
-    const updatedGalleries = [...userToUpdate.galleries]
-    const galleryToUpdate = updatedGalleries.find((newGallery) => {
-      return newGallery.id === gallery.id
-    })
-    console.log(updatedGalleries)
-    galleryToUpdate[event.target.name] = event.target.value
-    userToUpdate.galleries = updatedGalleries
-    this.setState({users: updatedUsers})
-  }
-
-  updateGallery = async(gallery) => {
-    try {
-      const response = await axios.patch(`/api/galleries/${gallery.id}`, gallery)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
+  // crud artworks
   createArtwork = async(gallery, user) => {
     const response = await axios.post(`/api/galleries/${gallery.id}/artworks`)
     const userWithNewArtwork = response.data
@@ -133,26 +155,6 @@ class App extends Component {
     
     this.setState({users: updatedUsers})
   }
-
-  deleteArtwork = async(artwork, user) => {
-    try {
-      const response = await axios.delete(`/api/artworks/${artwork.id}`)
-      const userWithFewerArtworks = response.data
-      console.log("The user deleting a gallery is: ", userWithFewerArtworks)
-
-      const updatedUsers = [...this.state.users]
-
-      const userToUpdate = updatedUsers.find((newUser) => {
-        return newUser.id === user.id
-      })
-      userToUpdate.galleries = userWithFewerArtworks.galleries
-
-      this.setState({users: updatedUsers})
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   handleArtworkChange = (artwork, userId, event) => {
     let galleryId = artwork.gallery_id
     let artworkId = artwork.id
@@ -179,10 +181,27 @@ class App extends Component {
     // userToUpdate.galleries = updatedGalleries
     // this.setState({users: updatedUsers})
   }
-
   updateArtwork = async(artwork) => {
     try {
       const response = await axios.patch(`/api/artworks/${artwork.id}`, artwork)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  deleteArtwork = async(artwork, user) => {
+    try {
+      const response = await axios.delete(`/api/artworks/${artwork.id}`)
+      const userWithFewerArtworks = response.data
+      console.log("The user deleting a gallery is: ", userWithFewerArtworks)
+
+      const updatedUsers = [...this.state.users]
+
+      const userToUpdate = updatedUsers.find((newUser) => {
+        return newUser.id === user.id
+      })
+      userToUpdate.galleries = userWithFewerArtworks.galleries
+
+      this.setState({users: updatedUsers})
     } catch (error) {
       console.log(error)
     }
