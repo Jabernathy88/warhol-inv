@@ -44,11 +44,12 @@ const UsersListArticle = (props) => {
       </CreateUserButton>
 
       {props.users.map((user) => {
+
+        console.log(user.galleries)
+
         return (
           <UserCard
-            user={user}
-            galleries={user.galleries}
-            {...props}
+            user={user}            
             key={user.id}
             deleteUser={props.deleteUser}
             handleUserChange={props.handleUserChange}

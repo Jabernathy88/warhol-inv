@@ -14,7 +14,6 @@ class App extends Component {
     this.getUsers()
     this.getGalleries()
     this.getArtworks()
-    console.log(this.state)
   }
   getUsers = async () => {
     try {
@@ -38,8 +37,9 @@ class App extends Component {
   }
   getArtworks = async () => {
     try {
-        const artworksResponse = await axios.get(`/api/artwork`)
+        const artworksResponse = await axios.get(`/api/artworks`)
         await this.setState({artworks: artworksResponse.data})
+        console.log(this.state)
     }
     catch (error) {
         console.log(error)
@@ -212,6 +212,8 @@ class App extends Component {
       <div>
       <HomePage
         users={this.state.users}
+        galleries={this.state.galleries}
+        artworks={this.state.artworks}
         createUser={this.createUser}
         deleteUser={this.deleteUser}
         handleUserChange={this.handleUserChange}
