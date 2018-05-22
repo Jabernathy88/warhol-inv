@@ -39,7 +39,6 @@ class App extends Component {
     try {
         const artworksResponse = await axios.get(`/api/artworks`)
         await this.setState({artworks: artworksResponse.data})
-        console.log(this.state)
     }
     catch (error) {
         console.log(error)
@@ -116,7 +115,7 @@ class App extends Component {
   }
   updateGallery = async(gallery) => {
     try {
-      const response = await axios.patch(`/api/galleries/${gallery.id}`, gallery)
+      // const response = await axios.patch(`/api/galleries/${gallery.id}`, gallery)
     } catch (error) {
       console.log(error)
     }
@@ -156,8 +155,8 @@ class App extends Component {
     this.setState({users: updatedUsers})
   }
   handleArtworkChange = (artwork, userId, event) => {
-    let galleryId = artwork.gallery_id
-    let artworkId = artwork.id
+    // let galleryId = artwork.gallery_id
+    // let artworkId = artwork.id
     // const updatedUsers = [...this.state.users]
 
     // let userToUpdate = {}
@@ -183,7 +182,7 @@ class App extends Component {
   }
   updateArtwork = async(artwork) => {
     try {
-      const response = await axios.patch(`/api/artworks/${artwork.id}`, artwork)
+      // const response = await axios.patch(`/api/artworks/${artwork.id}`, artwork)
     } catch (error) {
       console.log(error)
     }

@@ -29,7 +29,7 @@ class Nav extends Component {
       <NavWrapper>
         <FlexWrapper>
         <a href="./"><span className="nav-option"><strong> | home | </strong></span></a> 
-        <a href="https://github.com/Jabernathy88/warhol-inv/blob/master/README.md" target="_blank"><span className="nav-option"><strong> | about | </strong></span></a>
+        <a href="https://github.com/Jabernathy88/warhol-inv/blob/master/README.md"><span className="nav-option"><strong> | about | </strong></span></a>
         </FlexWrapper>
       </NavWrapper>
     )

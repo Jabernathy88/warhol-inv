@@ -45,11 +45,9 @@ const UsersListArticle = (props) => {
 
       {props.users.map((user) => {
 
-        console.log(user.galleries)
-
         return (
           <UserCard
-            user={user}            
+            user={user}
             key={user.id}
             deleteUser={props.deleteUser}
             handleUserChange={props.handleUserChange}
