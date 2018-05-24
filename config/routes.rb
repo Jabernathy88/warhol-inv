@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     resources :artworks
 
     # custom
-    # post 'users/:id/galleries', to: 'galleries#create_under_user'
-    # post 'galleries/:id/artworks', to: 'artworks#create_under_gallery'
+    post 'users/:id/galleries', to: 'galleries#create_under_user'
+    post 'galleries/:id/artworks', to: 'artworks#create_under_gallery'
 
   end
 end
