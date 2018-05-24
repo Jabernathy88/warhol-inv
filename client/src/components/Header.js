@@ -9,8 +9,8 @@ class Header extends Component {
   render() {
     return (
       <HeaderWrapper>
-        <h1>Warhol.inv</h1>
-        <span> <strong> artist inventory manager </strong></span>
+        <h1>Art Banana</h1>
+        <h3 className="text-gray" >Inventory manager for dealers and collectors of great art.</h3>
       </HeaderWrapper>
     )
   }
