@@ -6,6 +6,8 @@ class Nav extends Component {
       <nav>
         <div className="nav-wrapper">
         <a href="#!" className="brand-logo"><i className="material-icons">stars</i></a>
+        {/* ^^ replace this with small image icon */}
+
         <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li><a href="./">Home</a></li>
