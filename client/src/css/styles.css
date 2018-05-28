@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6, p { margin: 0; }
 html {
   font-family: Helvetica, Arial, 'Noto Sans', 'Roboto', sans-serif;
   font-size: 14px;
-  background: rgb(255,255,255); 
+  background: #FFFFFF; 
 }
 h1 { font-size: 3.8rem; }
 h2 { font-size: 1.8rem; }
@@ -52,4 +52,23 @@ h4 { font-size: 1.2rem; }
 }
 
 /* styles */
+
+header {
+  background: #E0F7FA;
+  padding: 0 5px;
+}
+
+.bg-header {
+  
+}
+
+nav {
+  background: #FF4081;
+  padding: 0 5px;
+}
+
+.card {
+  padding: 0 2px;
+}
+
 

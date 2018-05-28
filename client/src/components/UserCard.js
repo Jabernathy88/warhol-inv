@@ -3,7 +3,7 @@ import GalleryCard from './GalleryCard';
 
 const UserCard = (props) => {
   return (
-    <div>
+    <div className="card">
       <p>
         <strong>User: {props.user.name}</strong> | id: {props.user.id}
       </p>

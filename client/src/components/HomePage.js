@@ -10,6 +10,10 @@ const HomePage = (props) => {
     <div id="content">
       <Header/>
       <Nav/> 
+      <div className="container">
+        <h2>Recent Users</h2>
+      </div>
+
       <UsersListArticle
         users={props.users}
         galleries={props.galleries}
@@ -28,6 +32,14 @@ const HomePage = (props) => {
         handleArtworkChange={props.handleArtworkChange}
         updateArtwork={props.handleArtworkChange}
         />
+
+      <div className="container">
+        <button className="waves-effect waves-light cyan btn-large"
+          onClick={props.createUser}
+          >
+          Add New User
+        </button>
+      </div>
       <Footer/>
     </div>
   )

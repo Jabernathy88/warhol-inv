@@ -3,22 +3,30 @@ import React, { Component } from 'react'
 class Nav extends Component {
   render() {
     return ( 
-      <nav>
+      <nav className="nav-extended">
+
         <div className="nav-wrapper">
-          <a href="#!" className="brand-logo"><i className="material-icons">stars</i></a>
-          {/* ^^ replace this with small image icon */}
+          <a href="#!" className="brand-logo center"><i className="material-icons">stars</i></a>
 
           <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li><a href="./">Home</a></li>
+
+          <ul id="nav-mobile" className="left hide-on-med-and-down">
+            <li><a href="./"><span className="grey-text text-lighten-2">Home</span></a></li>
             <li><a href="https://github.com/Jabernathy88/warhol-inv/blob/master/README.md">About</a></li>
           </ul>
 
           <ul className="sidenav" id="mobile-demo">
-            <li><a href="./">Home</a></li>
+            <li><a href="./"><span className="grey-text text-lighten-2">Home</span></a></li>
             <li><a href="https://github.com/Jabernathy88/warhol-inv/blob/master/README.md">About</a></li>
           </ul>
         </div>
+
+        <div className="nav-content">
+          <a className="btn-floating btn-large halfway-fab waves-effect waves-light cyan">
+            <i className="material-icons">add</i>
+          </a>
+        </div>
+
       </nav>
     )
   }
