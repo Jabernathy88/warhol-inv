@@ -208,24 +208,24 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-      <HomePage
-        users={this.state.users}
-        galleries={this.state.galleries}
-        artworks={this.state.artworks}
-        createUser={this.createUser}
-        deleteUser={this.deleteUser}
-        handleUserChange={this.handleUserChange}
-        updateUser={this.updateUser}
-        createGallery={this.createGallery}
-        deleteGallery={this.deleteGallery}
-        handleGalleryChange={this.handleGalleryChange}
-        updateGallery={this.updateGallery}
-        createArtwork={this.createArtwork}
-        deleteArtwork={this.deleteArtwork}
-        handleArtworkChange={this.handleArtworkChange}
-        updateArtwork={this.updateArtwork}
-      />
+      <div id="content">
+        <HomePage
+          users={this.state.users}
+          galleries={this.state.galleries}
+          artworks={this.state.artworks}
+          createUser={this.createUser}
+          deleteUser={this.deleteUser}
+          handleUserChange={this.handleUserChange}
+          updateUser={this.updateUser}
+          createGallery={this.createGallery}
+          deleteGallery={this.deleteGallery}
+          handleGalleryChange={this.handleGalleryChange}
+          updateGallery={this.updateGallery}
+          createArtwork={this.createArtwork}
+          deleteArtwork={this.deleteArtwork}
+          handleArtworkChange={this.handleArtworkChange}
+          updateArtwork={this.updateArtwork}
+        />
       </div>
     )
   }

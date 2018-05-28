@@ -1,37 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
 import GalleryCard from './GalleryCard';
-
-const UserCardWrapper = styled.div `
-  background: rgb(250,250,250);
-  margin: 2px 1px 3px;
-  padding: 0 10px 10px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
-  text-align: left;
-
-  ul {
-    margin-left: 18px; 
-    padding-left: 0;
-  }
-
-  button {
-    margin: 4px;
-  }
-
-  summary {
-    width: 40%;
-  }
-
-  summary:hover {
-    background: rgb(255,200,255);
-  }
-`
 
 const UserCard = (props) => {
   return (
-    <UserCardWrapper>
+    <div>
       <p>
         <strong>User: {props.user.name}</strong> | id: {props.user.id}
       </p>
@@ -84,7 +56,7 @@ const UserCard = (props) => {
           })
         }
       </details>
-    </UserCardWrapper>
+    </div>
   )
 }
 
