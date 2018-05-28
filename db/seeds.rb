@@ -167,3 +167,29 @@ Artwork.create(
   artist: "Van Gogh",
   img_url: "/img/vermeer_girl-w-pearl1.jpg"
 )
+
+Artwork.create(
+  gallery: susan_gallery3,
+  name: "Girl With Pearl Earring 3",
+  artist: "Vermeer",
+  img_url: "/img/vermeer_girl-w-pearl1.jpg"
+)
+Artwork.create(
+  gallery: susan_gallery3,
+  name: "Starry Night 3",
+  artist: "Van Gogh",
+  img_url: "/img/vermeer_girl-w-pearl1.jpg"
+)
+
+Artwork.create(
+  gallery: susan_gallery2,
+  name: "Girl With Pearl Earring 2",
+  artist: "Vermeer",
+  img_url: "/img/vermeer_girl-w-pearl1.jpg"
+)
+Artwork.create(
+  gallery: susan_gallery2,
+  name: "Starry Night 2",
+  artist: "Van Gogh",
+  img_url: "/img/vermeer_girl-w-pearl1.jpg"
+)
