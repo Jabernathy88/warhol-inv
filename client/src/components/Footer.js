@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 class Footer extends Component {
   render() {
     return (
-      <footer>
-        <div>
-          <a href="./"><span className="nav-option"><strong> | home | </strong></span></a> 
-          <a href="https://github.com/Jabernathy88/warhol-inv/blob/master/README.md"><span className="nav-option"><strong> | about | </strong></span></a>        
+      <footer className="page-footer pink darken-3">
+        <div class="footer-copyright pink darken-3">
+          <div class="container blue-grey-text text-lighten-3">
+            © 2018 Copyright Text
+            <a class="blue-grey-text text-lighten-1 right" href="#!">More Links</a>
+          </div>
         </div>
       </footer>
     )
   }
 }
 
-export default Footer 
+export default Footer

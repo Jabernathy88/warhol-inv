@@ -17,9 +17,9 @@ div, header, nav, footer {
   padding: 0;
 }
 h1 { padding: 35px 0 5px; }
-h2 { padding: 20px 0 5px; }
+h2 { padding: 15px 0 5px; }
 h3 { padding: 10px 0 5px; }
-h4, h5, h6, p { padding: 8px 0; }
+h4, h5, h6, p { padding: 5px 0; }
 h1, h2, h3, h4, h5, h6, p { margin: 0; }
 
 /* responsive text sizes */
@@ -31,7 +31,10 @@ html {
 h1 { font-size: 3.8rem; }
 h2 { font-size: 1.8rem; }
 h3 { font-size: 1.5rem; }
-h4 { font-size: 1.2rem; }
+h4 { font-size: 1.3rem; }
+h5 { font-size: 1.2rem; }
+h5 { font-size: 1.08rem; }
+h6 { font-size: 1.04rem; }
 
 /* tablet */
 @media screen and (min-width: 420px){
@@ -39,7 +42,9 @@ h4 { font-size: 1.2rem; }
   h1 { font-size: 4.2rem; }
   h2 { font-size: 2.0rem; }
   h3 { font-size: 1.7rem; }
-  h4 { font-size: 1.4rem; }
+  h4 { font-size: 1.5rem; }
+  h5 { font-size: 1.2rem; }
+  h6 { font-size: 1.08rem; }
 }
 
 /* desktop */
@@ -47,28 +52,26 @@ h4 { font-size: 1.2rem; }
   html { font-size: 16px; }
   h1 { font-size: 4.4rem; }
   h2 { font-size: 2.1rem; }
-  h3 { font-size: 1.8rem; }
-  h4 { font-size: 1.5rem; }
+  h3 { font-size: 1.9rem; }
+  h4 { font-size: 1.7rem; }
+  h5 { font-size: 1.4rem; }
+  h6 { font-size: 1.2rem; }
 }
 
 /* styles */
-
-header {
-  background: #E0F7FA;
-  padding: 0 5px;
+header, nav {
+  padding: 0 0 0 5px;
 }
 
 .bg-header {
-  
-}
 
-nav {
-  background: #FF4081;
-  padding: 0 5px;
 }
 
 .card {
-  padding: 0 2px;
+
 }
 
+footer {
+  margin-top: 10px;
+}
 

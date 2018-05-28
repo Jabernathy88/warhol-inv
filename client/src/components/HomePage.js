@@ -8,8 +8,8 @@ const HomePage = (props) => {
 
   return (
     <div id="content">
-      <Header/>
-      <Nav/> 
+      <Header />
+      <Nav /> 
       <div className="container">
         <h2>Recent Users</h2>
       </div>
@@ -34,13 +34,13 @@ const HomePage = (props) => {
         />
 
       <div className="container">
-        <button className="waves-effect waves-light cyan btn-large"
+        <button className="waves-effect waves-light btn-large cyan darken-2"
           onClick={props.createUser}
           >
           Add New User
         </button>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

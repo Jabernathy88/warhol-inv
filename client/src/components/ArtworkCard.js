@@ -5,7 +5,7 @@ const ArtworkCard = (props) => {
     <div>
       <ul className="props.artwork-list" key={props.artwork.id}>
 
-        <p><strong>Artwork: {props.artwork.name}</strong> | id: {props.artwork.id} </p>
+        <h6>Artwork: {props.artwork.name} | id: {props.artwork.id} </h6>
         {/* {console.log(props.artwork)} */}
 
         <details> 
@@ -21,7 +21,7 @@ const ArtworkCard = (props) => {
               />
               
               <span> 
-                <button className="update-user-button"
+                <button className="btn-small pink darken-1"
                 onClick={() => { 
                   props.deleteprops.artwork(props.artwork, props.user) 
                 }}>

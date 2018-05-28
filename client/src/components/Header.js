@@ -5,7 +5,7 @@ class Header extends Component {
     return (
       <header className="cyan lighten-4">
         <h1>Art Banana</h1>
-        <h3 className="text-gray" >Inventory manager for dealers and collectors of great art.</h3>
+        <h3><span className="blue-grey-text">Inventory manager for dealers and collectors of great art.</span></h3>
         <div className="bg-header"></div>
       </header>
     )

@@ -3,10 +3,8 @@ import GalleryCard from './GalleryCard';
 
 const UserCard = (props) => {
   return (
-    <div className="card">
-      <p>
-        <strong>User: {props.user.name}</strong> | id: {props.user.id}
-      </p>
+    <div className="card amber lighten-5">
+      <h4>User: {props.user.name} | id: {props.user.id}</h4>
 
       <p>
         Edit name: 
@@ -18,16 +16,14 @@ const UserCard = (props) => {
           }
           /> 
 
-        <span> 
-          <button className="update-user-button"
+          <button className="btn-small pink darken-1"
             onClick={() => {props.deleteUser(props.user)}}>
             Delete user
           </button> 
-        </span>
       </p>
 
       <p>
-        <button className="add-detail-button"
+        <button className="btn-small cyan"
           onClick={() => {
             console.log(props.user)
             props.createGallery(props.user)}}>

@@ -7,7 +7,7 @@ const GalleryCard = (props) => {
       
       <ul className="gallery-details" key={props.gallery.id}>
 
-        <p><strong>Gallery: {props.gallery.name}</strong> | id: {props.gallery.id} </p>
+        <h5>Gallery: {props.gallery.name} | id: {props.gallery.id} </h5>
 
         <p>
           Edit name: <input type="text" 
@@ -19,19 +19,16 @@ const GalleryCard = (props) => {
             /> 
 
 
-          <span> 
-            <button className="update-user-button"
+            <button className="btn-small pink darken-1"
               onClick={() => {
                 props.deleteGallery(props.gallery, props.user)
               }}>
               Delete gallery
             </button> 
-          </span>
-          
         </p>
 
         <p>
-          <button className="update-user-button"
+          <button className="btn-small cyan"
             onClick={() => {
               props.createArtwork(props.gallery, props.user)
               }}>
