@@ -127,3 +127,5 @@ This time I'm using color-coded cards in Trello to divide my User Stories into s
 That's it for now! Getting back to work. 
 
 -JA
+
+(Updated May 28)
