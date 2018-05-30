@@ -114,6 +114,10 @@ So Susan has 3 galleries, each with 2-5 paintings on view.
 
 Focusing on mobile design first. Going with Andy Warhol-esque colors for now.  
 
+![Pink color guide](./readme-images/color_guide_pink.png "Pink color guide")
+
+![Cyan color guide](./readme-images/color_guide_cyan.png "Cyan color guide")
+
 ## Trello Board Planning
 
 ![Planning board 1](./readme-images/trello-define-mvp1.png "Planning board 1")
