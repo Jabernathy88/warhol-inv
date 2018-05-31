@@ -6,15 +6,31 @@ class App extends Component {
   state = {
     users: [],
     galleries: [],
-    artworks: []
+    artworks: [],
+    apiArtwork: {}
   }
 
   // call ajax and set state
   componentWillMount() {
+    this.getApi()
     this.getUsers()
     this.getGalleries()
     this.getArtworks()
   }
+
+  // try api call to Artsy.net
+  getApi = async () => {
+    try {
+      const apiResponse = await axios.get(`https://api.artsy.net/api/artworks/4d8b92eb4eb68a1b2c000968`)
+      await this.setState({apiArtwork: apiResponse.data })
+      console.log(this.state.apiArtwork)
+    }
+    catch (error) {
+      console.log(error)
+      await this.setState({error: error.message})
+    }
+  }
+
   getUsers = async () => {
     try {
         const usersResponse = await axios.get(`/api/users`)
