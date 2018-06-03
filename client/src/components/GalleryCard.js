@@ -3,7 +3,7 @@ import ArtworkCard from './ArtworkCard'
 
 const GalleryCard = (props) => {
   return (
-    <div>
+    <div className="card">
       
       <ul className="gallery-details" key={props.gallery.id}>
 

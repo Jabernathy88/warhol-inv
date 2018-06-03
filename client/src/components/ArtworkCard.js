@@ -2,7 +2,7 @@ import React from 'react'
 
 const ArtworkCard = (props) => {
   return (
-    <div>
+    <div className="card">
       <ul className="props.artwork-list" key={props.artwork.id}>
 
         <h6>Artwork: {props.artwork.name} | id: {props.artwork.id} </h6>
