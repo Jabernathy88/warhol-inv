@@ -11,7 +11,7 @@ const HomePage = (props) => {
       <Header />
       <Nav /> 
       <div className="container">
-        <h2>Recent Users</h2>
+        <h2>Recent users</h2>
       </div>
 
       <UsersListArticle
