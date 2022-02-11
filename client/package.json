@@ -5,7 +5,7 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@material-ui/core": "^1.1.0",
-    "ajv": "^6.2.1",
+    "ajv": "^6.12.3",
     "axios": "^0.18.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
